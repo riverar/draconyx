@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace draconyx
+namespace Draconyx
 {
     /// <summary>
     /// Interaction logic for App.xaml

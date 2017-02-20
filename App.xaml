@@ -1,7 +1,7 @@
-﻿<Application x:Class="draconyx.App"
+﻿<Application x:Class="Draconyx.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:draconyx"
+             xmlns:local="clr-namespace:Draconyx"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

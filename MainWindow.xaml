@@ -1,12 +1,39 @@
-﻿<Window x:Class="draconyx.MainWindow"
+﻿<Window x:Class="Draconyx.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:draconyx"
+        xmlns:local="clr-namespace:Draconyx"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Paired Bluetooth Devices"
+        Icon="bluetooth.ico"
+        Height="300" Width="525"
+        Loaded="Window_Loaded"
+        ResizeMode="CanMinimize">
     <Grid>
-        
+        <ListView ItemsSource="{Binding Devices}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="LightGray" BorderThickness="0,0,0,1" Padding="0,0,0,5">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock VerticalAlignment="Center" Text="&#xE702;" FontSize="24" FontFamily="Segoe MDL2 Assets" />
+                            <StackPanel>
+                                <TextBlock>
+                                    <Run Text="{Binding Path=Name, Mode=OneWay}" />
+                                    <Run Text="{Binding Path=Id, Mode=OneWay, StringFormat='({0})'}" />
+                                </TextBlock>
+                                <TextBlock Text="{Binding Path=SignalStrength, Mode=OneWay, StringFormat='Signal strength: {0}db'}" />
+                                <TextBlock Text="{Binding Path=LastUpdated, Mode=OneWay, StringFormat='Last updated: {0}'}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>

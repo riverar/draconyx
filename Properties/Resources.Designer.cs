@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace draconyx.Properties
+namespace Draconyx.Properties
 {
 
 
