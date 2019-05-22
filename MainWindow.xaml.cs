@@ -26,8 +26,16 @@ namespace Draconyx
                 //    OR System.Devices.Aep.ProtocolId:=""{bb7bb05e-5972-42b5-94fc-76eaa7084d49}"")
                 //    AND System.Devices.Aep.IsPaired:=true",
 
-                @"System.Devices.Aep.ProtocolId:=""{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}""
-                    AND System.Devices.Aep.IsPaired:=true",
+                // Bug-fix - JH 05/05/2017: Devices added to the BT stack but not correctly removed or "stuck" between
+                //							BT stack versions (e.g., CSR Harmony BT stack removed without removing BT
+                //							devices, then reverting to the default Windows BT stack leaves traces of
+                //							of phantom devices in the apps list. This causes a "The provided device ID 
+                //							is not a valid BluetoothDevice object." exception in LiveBluetoothDevices.cs -> Line 31.
+                // Resolution:				Added " AND System.Devices.Aep.IsPresent:=true" to the watcher to exclude
+                //							these kind of devices form the list/watcher.
+
+                    @"System.Devices.Aep.ProtocolId:=""{e0cbf06c-cd8b-4647-bb8a-263b43f0f974}""
+                    AND System.Devices.Aep.IsPaired:=true AND System.Devices.Aep.IsPresent:=true",
                 new string[] {
                     "System.Devices.Aep.ProtocolId",
                     "System.Devices.Aep.DeviceAddress",
