@@ -2,13 +2,10 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Draconyx")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyDescription("Simple tool to query Bluetooth devices on Windows 10 using Windows.Devices.Bluetooth and Windows.Devices.Enumeration APIs.")]
 [assembly: AssemblyProduct("Draconyx")]
-[assembly: AssemblyCopyright("")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+[assembly: AssemblyMetadata("Repository", "https://github.com/riverar/draconyx")]
+[assembly: AssemblyMetadata("License", "https://github.com/riverar/draconyx/blob/master/LICENSE")]
 [assembly: ComVisible(false)]
 
 [assembly: AssemblyVersion("0.2.0.0")]
